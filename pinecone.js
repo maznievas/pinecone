@@ -27,6 +27,11 @@
 // ]
 // });
 
+// Bugs
+// clicking on carousel stops autoshowing
+// centering block content for mobile deice
+// resizing of carousele image on mobile devices
+
 
         $('.thing').slick({
           // dots: true,
