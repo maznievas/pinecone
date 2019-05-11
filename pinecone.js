@@ -33,15 +33,38 @@
 // resizing of carousele image on mobile devices
 
 
+//  $(document).ready(function(){
+// 	$('.carousel').carousel({
+// 	  interval: 3000,
+// 	  keyboard: false,
+// 	  wrap: false
+// 	})
+// });
+
+ $('.carousel .item').each(function() {
+var next = $(this).next();
+if (!next.length) {
+next = $(this).siblings(':first');
+}
+next.children(':first-child').clone().appendTo($(this));
+for (var i = 0; i < 2; i++) {
+next = next.next();
+if (!next.length) {
+next = $(this).siblings(':first');
+}
+next.children(':first-child').clone().appendTo($(this));
+}
+});
+
+
+
+
+ $(document).ready(function(){
         $('.thing').slick({
-          // dots: true,
           arrows: false,
           autoplay: true,
           infinite: true,
           loop:true,
-          // autoplaySpeed: 2000,
-            //fade
-            // infinite: true,
             speed: 400,
             fade: true,
             cssEase: 'linear',
@@ -55,3 +78,5 @@
     }
 ]
         });
+      });
+
